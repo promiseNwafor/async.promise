@@ -25,7 +25,7 @@ function getSamplePosts(): Post[] {
     {
       slug: 'awaiting-the-future-of-ai-coding',
       title: 'Awaiting: The Future of AI-Powered Coding',
-      date: '2024-01-15',
+      date: '2025-06-18',
       excerpt: 'From GitHub Copilot to Claude Dev, exploring the emerging landscape of AI coding assistants and what they mean for software engineers.',
       content: `# Awaiting: The Future of AI-Powered Coding
 
@@ -65,21 +65,21 @@ The tools on the horizon promise even more:
 
 ## The Human Promise
 
-Despite the AI revolution, the human element remains crucial. We're not being replaced—we're being elevated to focus on creativity, architecture, and solving bigger problems.
+Despite the AI revolution, the human element remains crucial. We're not being replaced, we're being elevated to focus on creativity, architecture, and solving bigger problems.
 
 The future isn't about AI replacing developers. It's about developers and AI working in async harmony, each awaiting the other's contributions to create something greater than the sum of its parts.`,
       readingTime: '6 min read',
       tags: ['ai', 'coding-assistants', 'github-copilot', 'future-tech'],
-      author: 'async.promise'
+      author: 'Promise Nwafor'
     },
     {
       slug: 'resolving-ai-integration-challenges',
       title: 'Resolving: Common AI Integration Pitfalls in Production',
-      date: '2024-01-10',
+      date: '2025-05-26',
       excerpt: 'Real-world lessons from integrating AI APIs into production systems. From rate limiting nightmares to prompt engineering best practices.',
       content: `# Resolving: Common AI Integration Pitfalls in Production
 
-Integrating AI into production systems is like debugging async code—full of subtle timing issues and unexpected edge cases. Here's what I've learned from the trenches.
+Integrating AI into production systems is like debugging async code full of subtle timing issues and unexpected edge cases. Here's what I've learned from the trenches.
 
 ## The Rate Limiting Reality
 
@@ -147,15 +147,15 @@ Monitor what matters:
 - Error rates by model
 - Quality metrics through user feedback
 
-The key is treating AI as another async dependency—with proper error handling, monitoring, and graceful degradation.`,
+The key is treating AI as another async dependency with proper error handling, monitoring, and graceful degradation.`,
       readingTime: '8 min read',
       tags: ['ai-integration', 'production', 'api-design', 'monitoring'],
-      author: 'async.promise'
+      author: 'Promise Nwafor'
     },
     {
       slug: 'catching-ai-limitations',
       title: 'Catching: When AI Promises Fall Short',
-      date: '2024-01-05',
+      date: '2025-05-19',
       excerpt: 'A critical look at AI limitations in software development. Understanding when to rely on AI and when human expertise is irreplaceable.',
       content: `# Catching: When AI Promises Fall Short
 
@@ -245,12 +245,12 @@ AI is a powerful tool, not a silver bullet. The most successful teams:
 Remember: every promise can be rejected. The key is handling those rejections gracefully and learning from them.`,
       readingTime: '7 min read',
       tags: ['ai-limitations', 'critical-thinking', 'best-practices', 'reality-check'],
-      author: 'async.promise'
+      author: 'Promise Nwafor'
     },
     {
       slug: 'async-ai-development-patterns',
       title: 'Async AI: Design Patterns for AI-First Development',
-      date: '2024-01-01',
+      date: '2025-05-12',
       excerpt: 'Design patterns and architectural approaches for building robust applications with AI at their core. From circuit breakers to prompt chains.',
       content: `# Async AI: Design Patterns for AI-First Development
 
@@ -401,7 +401,7 @@ class AsyncAIOrchestrator {
 These patterns help build resilient AI applications that handle the async, unpredictable nature of AI services while maintaining good user experience.`,
       readingTime: '9 min read',
       tags: ['design-patterns', 'ai-architecture', 'async-programming', 'best-practices'],
-      author: 'async.promise'
+      author: 'Promise Nwafor'
     }
   ];
 } 
