@@ -1,16 +1,14 @@
 import Link from 'next/link';
-import { Zap } from 'lucide-react';
+import { AsyncPromiseLogo } from './AsyncPromiseLogo';
 
 export function Header() {
   return (
     <header className="backdrop-blur-glass sticky top-0 z-50 border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link href="/" className="flex items-center gap-2 text-lg font-semibold text-white hover:text-[#5e5ce6] transition-colors group">
-            <div className="w-8 h-8 bg-gradient-to-br from-[#5e5ce6] to-[#4f4cdb] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Zap className="w-4 h-4 text-white" />
-            </div>
-            Linear Blog
+          <Link href="/" className="flex items-center gap-3 text-lg font-semibold text-white hover:text-[#5e5ce6] transition-colors group">
+            <AsyncPromiseLogo className="group-hover:scale-110 transition-transform" />
+            <span className="font-mono">async.promise</span>
           </Link>
           
           <nav className="flex items-center gap-8">

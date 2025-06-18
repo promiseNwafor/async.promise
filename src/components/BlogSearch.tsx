@@ -34,7 +34,7 @@ export function BlogSearch({ posts }: BlogSearchProps) {
             placeholder="Search articles..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:bg-white/10 focus:border-white/20 transition-all outline-none"
+            className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:bg-white/10 focus:border-white/20 focus:ring-2 focus:ring-[#5e5ce6]/20 transition-all outline-none"
           />
           {searchQuery && (
             <button

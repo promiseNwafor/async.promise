@@ -7,8 +7,11 @@ import { Footer } from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My Blog",
-  description: "A personal blog built with Next.js and Tailwind CSS",
+  title: "async.promise",
+  description: "Awaiting the future of AI in software engineering. Exploring the async nature of AI development, resolving integration challenges, and catching the promises of tomorrow's tools.",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({

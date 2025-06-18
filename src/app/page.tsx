@@ -20,18 +20,17 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/70 mb-8">
             <Sparkles className="w-4 h-4" />
-            Welcome to the future of blogging
+            Awaiting the future of AI in software engineering
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-gradient">Ideas that</span>
-            <br />
-            <span className="text-white">shape tomorrow</span>
+            <span className="text-gradient">async.</span>
+            <span className="text-white">promise</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
-            Exploring the intersection of technology, design, and human creativity. 
-            Where complex ideas become simple insights.
+            Resolving AI promises for developers. Exploring the async nature of AI development, 
+            catching limitations, and awaiting the tools that will shape tomorrow.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -47,7 +46,7 @@ export default function Home() {
               href="/about"
               className="inline-flex items-center gap-2 text-white/70 hover:text-white px-8 py-4 rounded-xl border border-white/10 hover:border-white/20 font-medium transition-all hover-lift backdrop-blur-sm"
             >
-              About Me
+              About
             </Link>
           </div>
         </div>
@@ -60,24 +59,24 @@ export default function Home() {
             <div className="w-12 h-12 bg-gradient-to-br from-[#5e5ce6] to-[#4f4cdb] rounded-xl flex items-center justify-center mx-auto mb-4">
               <Code className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Technical Deep Dives</h3>
-            <p className="text-white/60">Exploring complex technical concepts with clarity and depth.</p>
+            <h3 className="text-xl font-semibold text-white mb-2">Awaiting: Future Tools</h3>
+            <p className="text-white/60">Exploring upcoming AI tools and their potential impact on development workflows.</p>
           </div>
           
           <div className="text-center p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all hover-lift">
             <div className="w-12 h-12 bg-gradient-to-br from-[#5e5ce6] to-[#4f4cdb] rounded-xl flex items-center justify-center mx-auto mb-4">
               <Lightbulb className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Innovation Insights</h3>
-            <p className="text-white/60">Thoughts on emerging technologies and their impact on society.</p>
+            <h3 className="text-xl font-semibold text-white mb-2">Resolving: Integration Challenges</h3>
+            <p className="text-white/60">Practical solutions for integrating AI into production systems and workflows.</p>
           </div>
           
           <div className="text-center p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all hover-lift">
             <div className="w-12 h-12 bg-gradient-to-br from-[#5e5ce6] to-[#4f4cdb] rounded-xl flex items-center justify-center mx-auto mb-4">
               <Sparkles className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Creative Process</h3>
-            <p className="text-white/60">Behind the scenes of building digital experiences.</p>
+            <h3 className="text-xl font-semibold text-white mb-2">Catching: AI Limitations</h3>
+            <p className="text-white/60">Critical analysis of AI limitations and when human expertise remains essential.</p>
           </div>
         </div>
       </section>
@@ -87,7 +86,7 @@ export default function Home() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Latest Articles</h2>
-            <p className="text-white/60">Fresh perspectives on technology and design</p>
+            <p className="text-white/60">Fresh insights on AI in software engineering</p>
           </div>
           <Link
             href="/blog"
@@ -109,18 +108,31 @@ export default function Home() {
             <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Code className="w-8 h-8 text-white/40" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">No articles yet</h3>
+            <h3 className="text-xl font-semibold text-white mb-3">Awaiting: First Articles</h3>
             <p className="text-white/60 mb-6">
-              Create your first blog post by adding a Markdown file to the{' '}
-              <code className="bg-white/10 px-2 py-1 rounded text-sm">src/content/posts</code> directory.
+              The async promises of AI content are loading... Create your first blog post by adding 
+              a Markdown file to{' '}
+              <code className="bg-white/10 px-2 py-1 rounded text-sm font-mono">src/content/posts</code>
             </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-[#5e5ce6] hover:text-white transition-colors"
-            >
-              Learn more about this blog
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-[#5e5ce6] hover:text-white transition-colors"
+              >
+                Learn about async.promise
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <span className="text-white/30 hidden sm:block">•</span>
+              <a
+                href="https://github.com/yourusername/blog/tree/main/src/content"
+                className="inline-flex items-center gap-2 text-white/50 hover:text-white/70 transition-colors text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View content templates
+                <ArrowRight className="w-3 h-3" />
+              </a>
+            </div>
           </div>
         )}
         

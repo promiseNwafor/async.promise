@@ -15,7 +15,7 @@ export default function BlogPage() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/70 mb-6">
               <Sparkles className="w-4 h-4" />
-              Latest insights and tutorials
+              AI insights and practical patterns
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -23,7 +23,7 @@ export default function BlogPage() {
             </h1>
             
             <p className="text-xl text-white/60 max-w-2xl mx-auto mb-8">
-              Exploring technology, design, and the future of digital experiences.
+              Exploring AI in software engineering - from async patterns to production challenges.
             </p>
           </div>
         </div>

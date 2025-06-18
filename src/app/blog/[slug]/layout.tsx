@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: BlogPostLayoutProps) {
   }
 
   return {
-    title: `${post.title} - Linear Blog`,
+    title: `${post.title} - async.promise`,
     description: post.excerpt,
   };
 }
