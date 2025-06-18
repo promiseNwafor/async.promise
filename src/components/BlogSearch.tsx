@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useTransition, useDeferredValue } from 'react';
 import { Search } from 'lucide-react';
 import { Post } from '@/lib/posts';
 import { PostCard } from '@/components/PostCard';
@@ -11,17 +11,26 @@ interface BlogSearchProps {
 
 export function BlogSearch({ posts }: BlogSearchProps) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isPending, startTransition] = useTransition();
+  const deferredSearchQuery = useDeferredValue(searchQuery);
 
   const filteredPosts = useMemo(() => {
-    if (!searchQuery.trim()) return posts;
+    if (!deferredSearchQuery.trim()) return posts;
     
-    const query = searchQuery.toLowerCase();
+    const query = deferredSearchQuery.toLowerCase();
     return posts.filter(post => 
       post.title.toLowerCase().includes(query) ||
       post.excerpt.toLowerCase().includes(query) ||
       post.tags?.some(tag => tag.toLowerCase().includes(query))
     );
-  }, [posts, searchQuery]);
+  }, [posts, deferredSearchQuery]);
+
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value);
+    startTransition(() => {
+      // This will trigger the deferred value update
+    });
+  };
 
   return (
     <>
@@ -33,12 +42,13 @@ export function BlogSearch({ posts }: BlogSearchProps) {
             type="text"
             placeholder="Search articles..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => handleSearchChange(e.target.value)}
             className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:bg-white/10 focus:border-white/20 focus:ring-2 focus:ring-[#5e5ce6]/20 transition-all outline-none"
           />
           {searchQuery && (
             <button
-              onClick={() => setSearchQuery('')}
+              onClick={() => handleSearchChange('')}
+              disabled={isPending}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/40 hover:text-white/70 transition-colors"
             >
               ×
@@ -51,7 +61,7 @@ export function BlogSearch({ posts }: BlogSearchProps) {
       <div className="text-center mb-8">
         <p className="text-xl text-white/60">
           {filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'} 
-          {searchQuery ? ` found for "${searchQuery}"` : ''}
+          {deferredSearchQuery ? ` found for "${deferredSearchQuery}"` : ''}
         </p>
       </div>
 
@@ -59,7 +69,7 @@ export function BlogSearch({ posts }: BlogSearchProps) {
       {filteredPosts.length > 0 ? (
         <>
           {/* Featured Article - only show when not searching */}
-          {!searchQuery && filteredPosts.length > 0 && (
+          {!deferredSearchQuery && filteredPosts.length > 0 && (
             <div className="mb-16">
               <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <div className="w-2 h-2 bg-[#5e5ce6] rounded-full" />
@@ -124,7 +134,7 @@ export function BlogSearch({ posts }: BlogSearchProps) {
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <div className="w-2 h-2 bg-[#5e5ce6] rounded-full" />
-              {searchQuery ? 'Search Results' : 'All Articles'} ({filteredPosts.length})
+              {deferredSearchQuery ? 'Search Results' : 'All Articles'} ({filteredPosts.length})
             </h2>
           </div>
           
@@ -134,17 +144,17 @@ export function BlogSearch({ posts }: BlogSearchProps) {
             ))}
           </div>
         </>
-      ) : searchQuery ? (
+      ) : deferredSearchQuery ? (
         <div className="text-center py-24">
           <div className="w-20 h-20 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-6">
             <Search className="w-10 h-10 text-white/40" />
           </div>
           <h3 className="text-2xl font-semibold text-white mb-4">No articles found</h3>
           <p className="text-white/60 mb-8 max-w-md mx-auto">
-            We couldn&apos;t find any articles matching &quot;{searchQuery}&quot;. Try searching with different keywords.
+            We couldn&apos;t find any articles matching &quot;{deferredSearchQuery}&quot;. Try searching with different keywords.
           </p>
           <button
-            onClick={() => setSearchQuery('')}
+            onClick={() => handleSearchChange('')}
             className="inline-flex items-center gap-2 bg-[#5e5ce6] hover:bg-[#4f4cdb] text-white px-6 py-3 rounded-xl font-medium transition-all hover:scale-105"
           >
             Clear Search
